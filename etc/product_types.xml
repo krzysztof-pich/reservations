@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_types.xsd">
+    <type name="work_hour_type" label="Working Hours Product" modelInstance="Pich\Reservations\Model\Product\Type\WorkHour" indexPriority="60" sortOrder="80" isQty="true">
+        <indexerModel instance="Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\VirtualProductPrice" />
+        <priceModel instance="Pich\Reservations\Model\Product\Price"/>
+    </type>
+</config>
