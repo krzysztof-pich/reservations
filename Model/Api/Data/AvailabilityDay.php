@@ -10,19 +10,15 @@ class AvailabilityDay implements AvailabilityDayInterface
     private DateTime $day;
     private int $hours;
 
-    public function setDay(DateTime $day): void
+    public function __construct(DateTime $day, int $hours)
     {
         $this->day = $day;
+        $this->hours = $hours;
     }
 
     public function getDay(): DateTime
     {
         return $this->day;
-    }
-
-    public function setHours(int $hours): void
-    {
-        $this->hours = $hours;
     }
 
     public function getHours(): int

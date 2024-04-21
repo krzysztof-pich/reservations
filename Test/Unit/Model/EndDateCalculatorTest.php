@@ -2,6 +2,7 @@
 
 namespace Pich\Reservations\Test\Unit\Model;
 
+use ArrayIterator;
 use DateTime;
 use OutOfRangeException;
 use Pich\Reservations\Model\Api\Data\AvailabilityDay;
@@ -74,16 +75,13 @@ class EndDateCalculatorTest extends TestCase
      */
     private function createAvailabilityDay(string $date, int $hours): AvailabilityDayInterface
     {
-        $availabilityDay = new AvailabilityDay();
-        $availabilityDay->setDay(new DateTime($date));
-        $availabilityDay->setHours($hours);
-        return $availabilityDay;
+        return new AvailabilityDay(new DateTime($date), $hours);
     }
 
     private function createAvailabilityIteratorMock(array $items): AvailableDaysIteratorInterface|MockObject
     {
         $mockedIterator = $this->createMock(AvailableDaysIteratorInterface::class);
-        $iterator = new \ArrayIterator($items);
+        $iterator = new ArrayIterator($items);
 
         $mockedIterator
             ->method('rewind')

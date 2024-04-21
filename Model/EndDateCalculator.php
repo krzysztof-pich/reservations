@@ -3,13 +3,11 @@
 namespace Pich\Reservations\Model;
 
 use DateTime;
+use OutOfRangeException;
 use Pich\Reservations\Api\Data\Daily\AvailableDaysIteratorInterface;
 
 class EndDateCalculator
 {
-
-
-
     public function calculateWorkEndDate(AvailableDaysIteratorInterface $availableDays, int $horusBought): DateTime
     {
         foreach ($availableDays as $item) {
@@ -18,6 +16,6 @@ class EndDateCalculator
                 return $item->getDay();
             }
         }
-        throw new \OutOfRangeException('End date not found');
+        throw new OutOfRangeException('End date not found');
     }
 }
