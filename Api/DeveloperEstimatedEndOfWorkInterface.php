@@ -11,8 +11,8 @@ interface DeveloperEstimatedEndOfWorkInterface
 {
     /**
      * @param int $productId
-     * @param \DateTime $startDate
-     * @return \DateTime
+     * @param string $startDate
+     * @return string
      */
-    public function getEstimatedEndOfWork(int $productId, \DateTime $startDate): \DateTime;
+    public function getEstimatedEndOfWork(int $productId, string $startDate): string;
 }

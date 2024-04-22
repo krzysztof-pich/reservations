@@ -2,11 +2,18 @@
 
 namespace Pich\Reservations\Model\Api;
 
+use Magento\Framework\Stdlib\DateTime;
+
 class DeveloperEstimatedEndOfWork implements \Pich\Reservations\Api\DeveloperEstimatedEndOfWorkInterface
 {
-    public function getEstimatedEndOfWork(int $productId, \DateTime $startDate): \DateTime
+    /**
+     * @param int $productId
+     * @param string $startDate
+     * @return string
+     */
+    public function getEstimatedEndOfWork(int $productId, string $startDate): string
     {
-        return new \DateTime('2021-12-31 23:59:59');
+        return '2021-12-31 23:59:59';
     }
 }
 
