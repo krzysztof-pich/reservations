@@ -32,7 +32,6 @@ class AddAttributeToWorkingHourProductType implements DataPatchInterface
      */
     public function apply(): void
     {
-        //generate code to add custom attribute to product type work_hour_type called Daily availability via data patch
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
         $eavSetup->addAttribute(
